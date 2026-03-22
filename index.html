@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --ink: #0e0c09;
       --parchment: #f7f2e9;
@@ -18,9 +17,7 @@
       --mid: #6b6358;
       --light: #e9e3d8;
     }
-
     html { scroll-behavior: smooth; }
-
     body {
       background: var(--parchment);
       color: var(--ink);
@@ -29,8 +26,6 @@
       line-height: 1.7;
       overflow-x: hidden;
     }
-
-    /* ── TOP BAR ── */
     .top-bar {
       background: var(--ink);
       color: var(--gold);
@@ -42,23 +37,14 @@
       letter-spacing: 3px;
       text-transform: uppercase;
     }
-
-    /* ── HEADER ── */
-    header {
-      background: var(--ink);
-      position: relative;
-      overflow: hidden;
-    }
+    header { background: var(--ink); position: relative; overflow: hidden; }
     header::before {
       content: '';
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(ellipse 60% 60% at 50% 0%, rgba(201,168,76,0.18) 0%, transparent 70%),
-        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      background: radial-gradient(ellipse 60% 60% at 50% 0%, rgba(201,168,76,0.18) 0%, transparent 70%);
       pointer-events: none;
     }
-
     .header-inner {
       max-width: 1100px;
       margin: 0 auto;
@@ -66,7 +52,6 @@
       text-align: center;
       position: relative;
     }
-
     .header-tag {
       font-family: 'Raleway', sans-serif;
       font-size: 10px;
@@ -80,25 +65,16 @@
       justify-content: center;
       gap: 12px;
     }
-    .header-tag::before, .header-tag::after {
-      content: '';
-      width: 40px;
-      height: 1px;
-      background: var(--gold);
-      opacity: 0.5;
-    }
-
+    .header-tag::before, .header-tag::after { content: ''; width: 40px; height: 1px; background: var(--gold); opacity: 0.5; }
     .site-title {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: clamp(3rem, 8vw, 6rem);
       font-weight: 900;
       color: var(--parchment);
-      letter-spacing: -1px;
       line-height: 1;
       margin-bottom: 8px;
     }
     .site-title span { color: var(--gold); }
-
     .site-subtitle {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
@@ -107,12 +83,10 @@
       letter-spacing: 1px;
       margin-bottom: 32px;
     }
-
     nav {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 0;
       border-top: 1px solid rgba(201,168,76,0.25);
       padding-top: 20px;
     }
@@ -130,561 +104,163 @@
     }
     nav a:last-child { border-right: none; }
     nav a:hover { color: var(--gold); }
-
-    /* ── VERSE BANNER ── */
     .verse-banner {
-      background: var(--crimson);
-      background-image: linear-gradient(135deg, #6b1212 0%, #8b1a1a 50%, #6b1212 100%);
+      background: linear-gradient(135deg, #6b1212 0%, #8b1a1a 50%, #6b1212 100%);
       color: var(--parchment);
       padding: 36px 24px;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
-    .verse-banner::before {
-      content: '\275D';
-      font-size: 140px;
-      color: rgba(255,255,255,0.04);
-      position: absolute;
-      left: 30px;
-      top: -20px;
-      font-family: Georgia, serif;
-      line-height: 1;
-    }
-    .verse-banner::after {
-      content: '\275E';
-      font-size: 140px;
-      color: rgba(255,255,255,0.04);
-      position: absolute;
-      right: 30px;
-      bottom: -40px;
-      font-family: Georgia, serif;
-      line-height: 1;
-    }
-    .verse-label {
-      font-family: 'Raleway', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      margin-bottom: 12px;
-    }
-    .verse-text {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
-      max-width: 800px;
-      margin: 0 auto 12px;
-      line-height: 1.5;
-      color: #fff;
-    }
-    .verse-ref {
-      font-family: 'Raleway', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      color: var(--gold-light);
-    }
-
-    /* ── MAIN LAYOUT ── */
-    .main-wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 48px 24px;
-    }
-
-    /* Section heading */
-    .section-head {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 28px;
-    }
-    .section-head h2 {
-      font-family: 'Raleway', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
+    .verse-banner::before { content: '\275D'; font-size: 140px; color: rgba(255,255,255,0.04); position: absolute; left: 30px; top: -20px; font-family: Georgia, serif; line-height: 1; }
+    .verse-label { font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 12px; }
+    .verse-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.2rem, 3vw, 1.8rem); max-width: 800px; margin: 0 auto 12px; line-height: 1.5; color: #fff; }
+    .verse-ref { font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 2px; color: var(--gold-light); }
+    .main-wrap { max-width: 1100px; margin: 0 auto; padding: 48px 24px; }
+    .section-head { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+    .section-head h2 { font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; white-space: nowrap; }
     .section-head h2.spirit { color: var(--crimson); }
     .section-head h2.health { color: var(--sage); }
-    .section-head .rule {
-      flex: 1;
-      height: 1px;
-      background: var(--light);
-    }
-
-    /* ── FEATURED HERO ARTICLE ── */
+    .section-head .rule { flex: 1; height: 1px; background: var(--light); }
     .featured {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0;
       border: 1px solid var(--light);
       margin-bottom: 56px;
       background: #fff;
       box-shadow: 0 4px 32px rgba(14,12,9,0.08);
+      cursor: pointer;
+      transition: box-shadow 0.2s;
     }
+    .featured:hover { box-shadow: 0 12px 40px rgba(14,12,9,0.15); }
     @media(max-width:700px){ .featured { grid-template-columns: 1fr; } }
-
-    .featured-image {
-      background: var(--ink);
-      min-height: 380px;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: flex-end;
-    }
-    .featured-image-bg {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(160deg, #1a1208 0%, #2d1f0a 40%, #0e0c09 100%);
-    }
-    .featured-image-symbol {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 120px;
-      opacity: 0.12;
-      color: var(--gold);
-      user-select: none;
-    }
-    .featured-image-tag {
-      position: relative;
-      padding: 20px 24px;
-      z-index: 2;
-    }
-    .featured-image-tag .cat {
-      display: inline-block;
-      background: var(--crimson);
-      color: #fff;
-      font-family: 'Raleway', sans-serif;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      padding: 5px 10px;
-      margin-bottom: 10px;
-    }
-    .featured-image-tag .img-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.2;
-    }
-
-    .featured-body {
-      padding: 40px 36px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      border-left: 1px solid var(--light);
-    }
-    .featured-body .overline {
-      font-family: 'Raleway', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 12px;
-    }
-    .featured-body h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-weight: 900;
-      line-height: 1.15;
-      margin-bottom: 16px;
-      color: var(--ink);
-    }
-    .featured-body p {
-      font-size: 1rem;
-      color: var(--mid);
-      line-height: 1.75;
-      margin-bottom: 24px;
-    }
-    .btn-read {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-family: 'Raleway', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--crimson);
-      text-decoration: none;
-      border-bottom: 2px solid var(--crimson);
-      padding-bottom: 3px;
-      width: fit-content;
-      transition: gap 0.2s;
-    }
+    .featured-image { background: var(--ink); min-height: 380px; position: relative; overflow: hidden; display: flex; align-items: flex-end; }
+    .featured-image-bg { position: absolute; inset: 0; background: linear-gradient(160deg, #1a1208 0%, #2d1f0a 40%, #0e0c09 100%); }
+    .featured-image-symbol { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 120px; opacity: 0.12; color: var(--gold); }
+    .featured-image-tag { position: relative; padding: 20px 24px; z-index: 2; }
+    .featured-image-tag .cat { display: inline-block; background: var(--crimson); color: #fff; font-family: 'Raleway', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 5px 10px; margin-bottom: 10px; }
+    .featured-image-tag .img-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: #fff; line-height: 1.2; }
+    .featured-body { padding: 40px 36px; display: flex; flex-direction: column; justify-content: center; border-left: 1px solid var(--light); }
+    .featured-body .overline { font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .featured-body h3 { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; line-height: 1.15; margin-bottom: 16px; }
+    .featured-body p { font-size: 1rem; color: var(--mid); line-height: 1.75; margin-bottom: 24px; }
+    .btn-read { display: inline-flex; align-items: center; gap: 10px; font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--crimson); background: none; border: none; border-bottom: 2px solid var(--crimson); padding-bottom: 3px; cursor: pointer; transition: gap 0.2s; }
     .btn-read:hover { gap: 16px; }
-
-    /* ── ARTICLE GRID ── */
-    .article-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-      margin-bottom: 56px;
-    }
+    .article-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-bottom: 56px; }
     @media(max-width:800px){ .article-grid { grid-template-columns: 1fr 1fr; } }
     @media(max-width:520px){ .article-grid { grid-template-columns: 1fr; } }
-
-    .card {
-      background: #fff;
-      border: 1px solid var(--light);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s, box-shadow 0.2s;
-      cursor: pointer;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(14,12,9,0.1);
-    }
-
-    .card-thumb {
-      height: 160px;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .card-thumb.spirit-bg {
-      background: linear-gradient(135deg, #1a0a0a 0%, #3d1515 100%);
-    }
-    .card-thumb.health-bg {
-      background: linear-gradient(135deg, #0a160a 0%, #1a3d1a 100%);
-    }
-    .card-thumb-icon {
-      font-size: 56px;
-      opacity: 0.18;
-      color: var(--gold);
-    }
-    .card-cat {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      font-family: 'Raleway', sans-serif;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 4px 8px;
-      color: #fff;
-    }
+    .card { background: #fff; border: 1px solid var(--light); display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(14,12,9,0.1); }
+    .card-thumb { height: 160px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .card-thumb.spirit-bg { background: linear-gradient(135deg, #1a0a0a 0%, #3d1515 100%); }
+    .card-thumb.health-bg { background: linear-gradient(135deg, #0a160a 0%, #1a3d1a 100%); }
+    .card-thumb-icon { font-size: 56px; opacity: 0.18; color: var(--gold); }
+    .card-cat { position: absolute; top: 12px; left: 12px; font-family: 'Raleway', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 4px 8px; color: #fff; }
     .card-cat.spirit { background: var(--crimson); }
     .card-cat.health { background: var(--sage); }
-
-    .card-body {
-      padding: 20px 22px 22px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .card-body h4 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      line-height: 1.3;
-      margin-bottom: 10px;
-      color: var(--ink);
-    }
-    .card-body p {
-      font-size: 0.9rem;
-      color: var(--mid);
-      line-height: 1.6;
-      flex: 1;
-      margin-bottom: 16px;
-    }
-    .card-meta {
-      font-family: 'Raleway', sans-serif;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold);
-      border-top: 1px solid var(--light);
-      padding-top: 12px;
-    }
-
-    /* ── DIVIDER ORNAMENT ── */
-    .ornament {
-      text-align: center;
-      color: var(--gold);
-      font-size: 22px;
-      letter-spacing: 8px;
-      margin: 16px 0 48px;
-      opacity: 0.5;
-    }
-
-    /* ── SIDEBAR LAYOUT ── */
-    .content-sidebar {
-      display: grid;
-      grid-template-columns: 1fr 300px;
-      gap: 48px;
-      margin-bottom: 56px;
-    }
+    .card-body { padding: 20px 22px 22px; flex: 1; display: flex; flex-direction: column; }
+    .card-body h4 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; line-height: 1.3; margin-bottom: 10px; }
+    .card-body p { font-size: 0.9rem; color: var(--mid); line-height: 1.6; flex: 1; margin-bottom: 16px; }
+    .card-meta { font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); border-top: 1px solid var(--light); padding-top: 12px; }
+    .ornament { text-align: center; color: var(--gold); font-size: 22px; letter-spacing: 8px; margin: 16px 0 48px; opacity: 0.5; }
+    .content-sidebar { display: grid; grid-template-columns: 1fr 300px; gap: 48px; margin-bottom: 56px; }
     @media(max-width:800px){ .content-sidebar { grid-template-columns: 1fr; } }
-
-    /* list articles */
-    .article-list { display: flex; flex-direction: column; gap: 0; }
-    .list-item {
-      display: grid;
-      grid-template-columns: 80px 1fr;
-      gap: 16px;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--light);
-      cursor: pointer;
-      transition: background 0.15s;
-    }
+    .article-list { display: flex; flex-direction: column; }
+    .list-item { display: grid; grid-template-columns: 80px 1fr; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--light); cursor: pointer; transition: opacity 0.15s; }
     .list-item:first-child { border-top: 1px solid var(--light); }
-    .list-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      font-weight: 900;
-      color: var(--light);
-      line-height: 1;
-      padding-top: 4px;
-    }
-    .list-content h4 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      line-height: 1.3;
-      margin-bottom: 6px;
-      color: var(--ink);
-    }
-    .list-content p {
-      font-size: 0.88rem;
-      color: var(--mid);
-      line-height: 1.55;
-    }
-    .list-content .tag {
-      font-family: 'Raleway', sans-serif;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-top: 8px;
-      display: inline-block;
-    }
+    .list-item:hover { opacity: 0.7; }
+    .list-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; color: var(--light); line-height: 1; padding-top: 4px; }
+    .list-content h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; line-height: 1.3; margin-bottom: 6px; }
+    .list-content p { font-size: 0.88rem; color: var(--mid); line-height: 1.55; }
+    .list-content .tag { font-family: 'Raleway', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-top: 8px; display: inline-block; }
     .tag.spirit { color: var(--crimson); }
     .tag.health { color: var(--sage); }
-
-    /* sidebar */
     .sidebar { display: flex; flex-direction: column; gap: 28px; }
-
-    .sidebar-widget {
-      background: var(--ink);
-      padding: 24px;
-      color: var(--parchment);
-    }
-    .sidebar-widget.light-widget {
-      background: #fff;
-      border: 1px solid var(--light);
-      color: var(--ink);
-    }
-    .widget-title {
-      font-family: 'Raleway', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(201,168,76,0.25);
-    }
-    .light-widget .widget-title {
-      border-bottom-color: var(--light);
-    }
-
+    .sidebar-widget { background: var(--ink); padding: 24px; color: var(--parchment); }
+    .sidebar-widget.light-widget { background: #fff; border: 1px solid var(--light); color: var(--ink); }
+    .widget-title { font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid rgba(201,168,76,0.25); }
+    .light-widget .widget-title { border-bottom-color: var(--light); }
     .topic-list { list-style: none; }
-    .topic-list li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(247,242,233,0.07);
-      font-size: 0.88rem;
-      cursor: pointer;
-      transition: color 0.15s;
-    }
+    .topic-list li { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(247,242,233,0.07); font-size: 0.88rem; cursor: pointer; transition: color 0.15s; }
     .topic-list li:hover { color: var(--gold-light); }
     .topic-list li:last-child { border-bottom: none; }
-    .topic-count {
-      font-family: 'Raleway', sans-serif;
-      font-size: 10px;
-      font-weight: 600;
-      color: var(--gold);
-      background: rgba(201,168,76,0.12);
-      padding: 2px 8px;
-    }
-
-    .subscribe-form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .subscribe-form p {
-      font-size: 0.88rem;
-      color: var(--mid);
-      line-height: 1.6;
-    }
-    .subscribe-form input {
-      border: 1px solid var(--light);
-      background: var(--parchment);
-      padding: 10px 14px;
-      font-family: 'Raleway', sans-serif;
-      font-size: 12px;
-      outline: none;
-      color: var(--ink);
-    }
+    .topic-count { font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 600; color: var(--gold); background: rgba(201,168,76,0.12); padding: 2px 8px; }
+    .subscribe-form { display: flex; flex-direction: column; gap: 10px; }
+    .subscribe-form p { font-size: 0.88rem; color: var(--mid); line-height: 1.6; }
+    .subscribe-form input { border: 1px solid var(--light); background: var(--parchment); padding: 10px 14px; font-family: 'Raleway', sans-serif; font-size: 12px; outline: none; color: var(--ink); }
     .subscribe-form input:focus { border-color: var(--gold); }
-    .subscribe-form button {
-      background: var(--crimson);
-      color: #fff;
-      border: none;
-      padding: 11px 14px;
-      font-family: 'Raleway', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .subscribe-form button:hover { background: #6b1212; }
-
-    /* ── HEALTH STRIP ── */
-    .health-strip {
-      background: var(--sage);
-      padding: 48px 24px;
-      margin-bottom: 56px;
-    }
-    .health-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .health-strip .section-head h2 { color: #fff; }
-    .health-strip .section-head .rule { background: rgba(255,255,255,0.2); }
-
-    .health-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
+    .subscribe-form button { background: var(--crimson); color: #fff; border: none; padding: 11px 14px; font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; cursor: pointer; }
+    .health-strip { background: var(--sage); padding: 48px 24px; margin-bottom: 56px; }
+    .health-inner { max-width: 1100px; margin: 0 auto; }
+    .health-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
     @media(max-width:800px){ .health-grid { grid-template-columns: 1fr 1fr; } }
     @media(max-width:500px){ .health-grid { grid-template-columns: 1fr; } }
-
-    .health-card {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      padding: 24px 20px;
-      color: #fff;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
+    .health-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); padding: 24px 20px; color: #fff; cursor: pointer; transition: background 0.2s; }
     .health-card:hover { background: rgba(255,255,255,0.14); }
-    .health-card .hc-icon {
-      font-size: 2rem;
-      margin-bottom: 12px;
-      display: block;
-    }
-    .health-card h4 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      line-height: 1.3;
-    }
-    .health-card p {
-      font-size: 0.82rem;
-      opacity: 0.75;
-      line-height: 1.6;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--ink);
-      color: rgba(247,242,233,0.5);
-      padding: 48px 24px 24px;
-    }
-    .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .footer-top {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 40px;
-      padding-bottom: 40px;
-      border-bottom: 1px solid rgba(201,168,76,0.15);
-      margin-bottom: 24px;
-    }
+    .health-card .hc-icon { font-size: 2rem; margin-bottom: 12px; display: block; }
+    .health-card h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+    .health-card p { font-size: 0.82rem; opacity: 0.75; line-height: 1.6; }
+    footer { background: var(--ink); color: rgba(247,242,233,0.5); padding: 48px 24px 24px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(201,168,76,0.15); margin-bottom: 24px; }
     @media(max-width:700px){ .footer-top { grid-template-columns: 1fr; } }
-    .footer-brand .name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      font-weight: 900;
-      color: var(--parchment);
-      margin-bottom: 10px;
-    }
+    .footer-brand .name { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 900; color: var(--parchment); margin-bottom: 10px; }
     .footer-brand .name span { color: var(--gold); }
     .footer-brand p { font-size: 0.85rem; line-height: 1.7; max-width: 300px; }
-    .footer-col h5 {
-      font-family: 'Raleway', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
-    }
-    .footer-col a {
-      display: block;
-      font-size: 0.88rem;
-      color: rgba(247,242,233,0.5);
-      text-decoration: none;
-      margin-bottom: 8px;
-      transition: color 0.15s;
-    }
+    .footer-col h5 { font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .footer-col a { display: block; font-size: 0.88rem; color: rgba(247,242,233,0.5); text-decoration: none; margin-bottom: 8px; transition: color 0.15s; }
     .footer-col a:hover { color: var(--gold-light); }
-    .footer-bottom {
-      text-align: center;
-      font-family: 'Raleway', sans-serif;
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: rgba(247,242,233,0.25);
-    }
+    .footer-bottom { text-align: center; font-family: 'Raleway', sans-serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(247,242,233,0.25); }
 
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .site-title    { animation: fadeUp 0.7s ease both; }
-    .site-subtitle { animation: fadeUp 0.7s 0.1s ease both; }
-    nav            { animation: fadeUp 0.7s 0.2s ease both; }
-    .featured      { animation: fadeUp 0.7s 0.1s ease both; }
+    /* MODAL */
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(14,12,9,0.88); z-index: 1000; overflow-y: auto; padding: 40px 20px; }
+    .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+    .modal { background: var(--parchment); max-width: 740px; width: 100%; position: relative; animation: fadeUp 0.3s ease both; }
+    .modal-header { background: var(--ink); padding: 40px 48px 32px; position: relative; }
+    @media(max-width:600px){ .modal-header { padding: 32px 24px 24px; } }
+    .modal-cat { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 5px 10px; color: #fff; margin-bottom: 16px; }
+    .modal-cat.spirit { background: var(--crimson); }
+    .modal-cat.health { background: var(--sage); }
+    .modal-title { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 900; color: var(--parchment); line-height: 1.15; margin-bottom: 16px; }
+    .modal-meta { font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
+    .modal-close { position: absolute; top: 16px; right: 16px; background: rgba(247,242,233,0.1); border: none; color: var(--parchment); font-size: 18px; width: 34px; height: 34px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+    .modal-close:hover { background: rgba(247,242,233,0.2); }
+    .modal-body { padding: 48px; }
+    @media(max-width:600px){ .modal-body { padding: 24px; } }
+    .modal-body p { font-size: 1.05rem; line-height: 1.85; color: #2a2520; margin-bottom: 24px; }
+    .modal-body h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; margin: 32px 0 12px; color: var(--ink); }
+    .modal-body .scripture { border-left: 3px solid var(--gold); padding: 16px 24px; margin: 28px 0; background: rgba(201,168,76,0.07); }
+    .modal-body .scripture p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; margin-bottom: 6px; color: var(--ink); }
+    .modal-body .scripture .ref { font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 0; }
+    .modal-footer { border-top: 1px solid var(--light); padding: 20px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    @media(max-width:600px){ .modal-footer { padding: 16px 24px; } }
+    .modal-footer span { font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--mid); }
+    .share-btn { background: var(--crimson); color: #fff; border: none; padding: 10px 20px; font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="top-bar">Spreading Light · Spirit &amp; Health · Est. 2025</div>
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOverlay(event)">
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-cat" id="modalCat"></div>
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <div class="modal-meta" id="modalMeta"></div>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-footer">
+      <span>The Third Elijah · Digital Ministry</span>
+      <button class="share-btn" onclick="shareArticle()">Share This Article</button>
+    </div>
+  </div>
+</div>
 
-<!-- HEADER -->
+<div class="top-bar">Spreading Light · Spirit &amp; Health · Digital Ministry</div>
+
 <header>
   <div class="header-inner">
     <div class="header-tag">Digital Ministry Magazine</div>
@@ -692,32 +268,27 @@
     <p class="site-subtitle">Restoring Truth in the Last Days</p>
     <nav>
       <a href="#">Home</a>
-      <a href="#">Spirit</a>
-      <a href="#">Health</a>
-      <a href="#">Bible Study</a>
-      <a href="#">Videos</a>
+      <a href="#spirit-section">Spirit</a>
+      <a href="#health-section">Health</a>
       <a href="#">About</a>
     </nav>
   </div>
 </header>
 
-<!-- VERSE BANNER -->
 <div class="verse-banner">
   <div class="verse-label">✦ Verse of the Week ✦</div>
   <p class="verse-text">"Behold, I will send you Elijah the prophet before the great and dreadful day of the Lord."</p>
   <div class="verse-ref">Malachi 4:5</div>
 </div>
 
-<!-- MAIN -->
 <div class="main-wrap">
-
-  <!-- FEATURED ARTICLE -->
   <div class="section-head" style="margin-bottom:20px;">
     <h2 class="spirit">Featured</h2>
     <div class="rule"></div>
-    <span style="font-family:'Raleway',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--mid);white-space:nowrap;">This Week's Cover Story</span>
+    <span style="font-family:'Raleway',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--mid);white-space:nowrap;">Cover Story</span>
   </div>
-  <div class="featured">
+
+  <div class="featured" onclick="openArticle('featured')">
     <div class="featured-image">
       <div class="featured-image-bg"></div>
       <div class="featured-image-symbol">✝</div>
@@ -729,195 +300,15 @@
     <div class="featured-body">
       <div class="overline">✦ Spirit · Bible Prophecy</div>
       <h3>Understanding the Three Angels' Messages for Our Time</h3>
-      <p>In Revelation 14, God sends three final messages to the world before the return of Christ. These messages are not distant history — they are happening right now, and understanding them changes everything about how we live and what we believe.</p>
-      <a href="#" class="btn-read">Read the Full Article →</a>
+      <p>In Revelation 14, God sends three final messages to the world before the return of Christ. These messages are not distant history — they are happening right now, and understanding them changes everything.</p>
+      <button class="btn-read">Read the Full Article →</button>
     </div>
   </div>
 
-  <!-- SPIRIT ARTICLES -->
-  <div class="section-head">
-    <h2 class="spirit">✦ Spirit</h2>
-    <div class="rule"></div>
-  </div>
-  <div class="article-grid">
-    <div class="card">
-      <div class="card-thumb spirit-bg">
-        <div class="card-thumb-icon">✦</div>
-        <span class="card-cat spirit">Spirit</span>
-      </div>
-      <div class="card-body">
-        <h4>Who Is God Really? His Character Revealed in Scripture</h4>
-        <p>Many people carry a distorted picture of God. The Bible paints a very different portrait — one full of love, justice, and grace.</p>
-        <div class="card-meta">Bible Study · 5 min read</div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-thumb spirit-bg">
-        <div class="card-thumb-icon">☩</div>
-        <span class="card-cat spirit">Spirit</span>
-      </div>
-      <div class="card-body">
-        <h4>How to Start Reading the Bible and Actually Understand It</h4>
-        <p>The Bible can feel overwhelming at first. Here are simple, practical steps to open Scripture and let it speak directly to you.</p>
-        <div class="card-meta">For Beginners · 4 min read</div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-thumb spirit-bg">
-        <div class="card-thumb-icon">⚑</div>
-        <span class="card-cat spirit">Spirit</span>
-      </div>
-      <div class="card-body">
-        <h4>Present Truth: What God Is Saying to the Church Right Now</h4>
-        <p>Each generation has a specific message from God meant for their time. Discover what "present truth" means and why it matters urgently.</p>
-        <div class="card-meta">Present Truth · 6 min read</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="ornament">✦ · ✦ · ✦</div>
-
-  <!-- SIDEBAR CONTENT -->
-  <div class="content-sidebar">
-    <div>
-      <div class="section-head">
-        <h2 class="spirit">Latest Articles</h2>
-        <div class="rule"></div>
-      </div>
-      <div class="article-list">
-        <div class="list-item">
-          <div class="list-num">01</div>
-          <div class="list-content">
-            <h4>Prayer: Why It Works and What the Science Says</h4>
-            <p>Far from being superstition, prayer has measurable effects on both the mind and body. Here's what research — and Scripture — reveals.</p>
-            <span class="tag spirit">Spirit</span>
-          </div>
-        </div>
-        <div class="list-item">
-          <div class="list-num">02</div>
-          <div class="list-content">
-            <h4>Your Body Is a Temple: The Biblical Foundation for Healthy Living</h4>
-            <p>1 Corinthians 6:19-20 is not just a nice saying — it is a mandate. What does it practically mean to honor God with your body?</p>
-            <span class="tag health">Health</span>
-          </div>
-        </div>
-        <div class="list-item">
-          <div class="list-num">03</div>
-          <div class="list-content">
-            <h4>The Sabbath: Rest as Resistance in a Restless World</h4>
-            <p>God built rest into creation for a reason. Discover the deep meaning of the Sabbath and why it still matters in the 21st century.</p>
-            <span class="tag spirit">Spirit</span>
-          </div>
-        </div>
-        <div class="list-item">
-          <div class="list-num">04</div>
-          <div class="list-content">
-            <h4>How Sleep Affects Your Spiritual Life More Than You Think</h4>
-            <p>Sleep deprivation impairs judgment, emotional regulation, and even moral decision-making. God designed the night for a reason.</p>
-            <span class="tag health">Health</span>
-          </div>
-        </div>
-        <div class="list-item">
-          <div class="list-num">05</div>
-          <div class="list-content">
-            <h4>Is the Bible Still Reliable? Evidence You Should Know</h4>
-            <p>Archaeological finds, manuscript accuracy, and fulfilled prophecy — the Bible's reliability holds up to serious scrutiny.</p>
-            <span class="tag spirit">Spirit</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="sidebar">
-      <!-- Topics -->
-      <div class="sidebar-widget">
-        <div class="widget-title">Browse Topics</div>
-        <ul class="topic-list">
-          <li>Bible Prophecy <span class="topic-count">12</span></li>
-          <li>Present Truth <span class="topic-count">8</span></li>
-          <li>Christian Living <span class="topic-count">15</span></li>
-          <li>Nutrition &amp; Diet <span class="topic-count">10</span></li>
-          <li>Mind &amp; Body <span class="topic-count">7</span></li>
-          <li>Prayer &amp; Faith <span class="topic-count">11</span></li>
-          <li>Lifestyle Medicine <span class="topic-count">9</span></li>
-        </ul>
-      </div>
-      <!-- Subscribe -->
-      <div class="sidebar-widget light-widget">
-        <div class="widget-title">Get New Posts</div>
-        <div class="subscribe-form">
-          <p>Get new articles delivered to your inbox every week.</p>
-          <input type="email" placeholder="Your email address"/>
-          <button>Subscribe Free</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div><!-- /main-wrap -->
-
-<!-- HEALTH STRIP -->
-<div class="health-strip">
-  <div class="health-inner">
+  <div id="spirit-section">
     <div class="section-head">
-      <h2 class="health" style="color:#fff;">✦ Health Education</h2>
+      <h2 class="spirit">✦ Spirit</h2>
       <div class="rule"></div>
     </div>
-    <div class="health-grid">
-      <div class="health-card">
-        <span class="hc-icon">🫀</span>
-        <h4>How the Heart Works and Why Rest Matters</h4>
-        <p>Understanding your cardiovascular system through both science and Scripture.</p>
-      </div>
-      <div class="health-card">
-        <span class="hc-icon">🌿</span>
-        <h4>The Biblical Diet: What God Said to Eat</h4>
-        <p>From Genesis to Leviticus — God's original dietary design for human health.</p>
-      </div>
-      <div class="health-card">
-        <span class="hc-icon">🧠</span>
-        <h4>Stress, Cortisol, and the Power of Faith</h4>
-        <p>How chronic stress damages the body and how spiritual practices heal it.</p>
-      </div>
-      <div class="health-card">
-        <span class="hc-icon">💧</span>
-        <h4>Water: The Simplest Health Practice You're Ignoring</h4>
-        <p>Hydration affects your brain, digestion, immunity, and even your mood.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="name">The <span>Third</span> Elijah</div>
-        <p>A digital ministry dedicated to spreading biblical truth and health education — helping people know God, understand His Word, and care for the body He gave them.</p>
-      </div>
-      <div class="footer-col">
-        <h5>Spirit</h5>
-        <a href="#">Bible Prophecy</a>
-        <a href="#">Present Truth</a>
-        <a href="#">Christian Living</a>
-        <a href="#">Prayer &amp; Faith</a>
-        <a href="#">Bible Study Guides</a>
-      </div>
-      <div class="footer-col">
-        <h5>Health</h5>
-        <a href="#">Nutrition</a>
-        <a href="#">Mind &amp; Body</a>
-        <a href="#">Lifestyle Medicine</a>
-        <a href="#">Exercise &amp; Rest</a>
-        <a href="#">Natural Remedies</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      © 2025 The Third Elijah · All Rights Reserved · Spreading Light in the Last Days
-    </div>
-  </div>
-</footer>
-
-</body>
-</html>
+    <div class="article-grid">
+      <div class="card" onclick="openArticle('god-character')
